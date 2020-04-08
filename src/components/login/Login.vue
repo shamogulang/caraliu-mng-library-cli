@@ -34,13 +34,10 @@ export default {
           'Content-Type': 'application/json'
         }
       }).then((res) => {
-        // 定义对象
-        // const {
-        // data
-        // } = res.data
         if (res.status === 200) {
-          // 登录成功，保存jwt
-          localStorage.setItem('token', res.data.jwt)
+          // 登录成功，保存token
+          localStorage.setItem('token', res.data.token)
+          localStorage.setItem('userPk', res.data.pk)
           this.$router.push({name: 'Home'})
           this.$message.success('登录成功')
         } else {

@@ -9,11 +9,16 @@ import './assets/base.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import MyHttpServer from './plugins/http'
+import moment from 'moment'
 
 Vue.use(ElementUI)
 Vue.use(MyHttpServer)
 
 Vue.config.productionTip = false
+// 加入日期解析插件
+Vue.filter('dateformat', (v) => {
+  return moment(v).format('YYYY-MM-DD HH:mm:ss')
+})
 
 /* eslint-disable no-new */
 new Vue({

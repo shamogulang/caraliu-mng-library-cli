@@ -2,20 +2,20 @@
   <el-container class="container">
     <el-header class="header">
       <el-row>
-        <el-col :span="4">
-          <div class="grid-content bg-purple">
-            <img src="../../assets/logo.png" alt="图片无法显示">
+        <el-col :span="3">
+          <div class="">
+            <img src="../../assets/logo.png" alt="图片无法显示" >
           </div>
         </el-col>
         <el-col :span="18" class="middle">
           <div class="grid-content bg-purple-light">
-            <h3>小桃子私塾图书馆</h3>
+            <h3>小桃子私塾图书馆管理系统</h3>
           </div>
         </el-col>
-        <el-col :span="2" class="logout">
+        <el-col :span="1" class="logout">
           <div class="grid-content bg-purple">
-            <a class="signOut"
-               @click.prevent="handleSignOut()" href="#">退出</a>
+            <a title="退出登录" class="signOut"
+               @click.prevent="handleSignOut()" href="#"> <el-button plain size = "mini" type="danger" icon="el-icon-right" circle></el-button></a>
           </div>
         </el-col>
       </el-row>
@@ -35,17 +35,17 @@
           </el-submenu>
         </el-menu>
 
-        <el-menu>
+        <el-menu :router="true" :unique-opened="true">
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>权限管理</span>
             </template>
-            <el-menu-item index="1-1">
+            <el-menu-item index="roles">
               <i class="el-icon-menu"></i>
               <span>角色列表</span>
             </el-menu-item>
-            <el-menu-item index="1-2">
+            <el-menu-item index="permissions">
               <i class="el-icon-menu"></i>
               <span>权限列表</span>
             </el-menu-item>
